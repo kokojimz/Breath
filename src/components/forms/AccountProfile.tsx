@@ -9,7 +9,6 @@ import * as z from "zod"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -83,13 +82,19 @@ function AccountProfile({ user, btnTitle }: Props) {
         }
 
         await updateUser({
-            userId: user.id,
             username: values.username,
+            image: values.profile_photo,
             name: values.name,
             bio: values.bio,
-            image: values.profile_photo,
+            userId: user.id,
             path: pathname
         });
+
+        if (pathname === "/profile/edit") {
+            router.back();
+        } else {
+            router.push("/");
+        }
     };
 
     return (
@@ -132,6 +137,7 @@ function AccountProfile({ user, btnTitle }: Props) {
                                     onChange={(e) => handleImage(e, field.onChange)}
                                 />
                             </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
@@ -151,6 +157,7 @@ function AccountProfile({ user, btnTitle }: Props) {
                                     {...field}
                                 />
                             </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
@@ -170,6 +177,7 @@ function AccountProfile({ user, btnTitle }: Props) {
                                     {...field}
                                 />
                             </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
@@ -189,6 +197,7 @@ function AccountProfile({ user, btnTitle }: Props) {
                                     {...field}
                                 />
                             </FormControl>
+                            <FormMessage />
                         </FormItem>
                     )}
                 />
