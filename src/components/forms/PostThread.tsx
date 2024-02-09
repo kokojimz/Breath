@@ -1,9 +1,11 @@
-"use client"
+"use client";
 
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Button } from "@/components/ui/button"
-import * as z from "zod"
+import * as z from "zod";
+import { useForm } from "react-hook-form";
+import { useOrganization } from "@clerk/nextjs";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { usePathname, useRouter } from "next/navigation";
+
 import {
     Form,
     FormControl,
@@ -11,35 +13,27 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/ui/form"
-import { Textarea } from "../ui/textarea";
+} from "@/components/ui/form";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 
-import { usePathname, useRouter } from "next/navigation";
-
-// import { updateUser } from "@/lib/actions/user.actions";
 import { ThreadValidation } from "@/lib/validations/thread";
-import { createThread } from "@/lib/actions/thread.actions"
+import { createThread } from "@/lib/actions/thread.actions";
 
 interface Props {
-    user: {
-        id: string;
-        objectId: string;
-        username: string;
-        name: string;
-        bio: string;
-        image: string;
-    };
-    btnTitle: string;
+    userId: string;
 }
 
-function PostThread({ userId }: { userId: string }) {
+function PostThread({ userId }: Props) {
     const router = useRouter();
     const pathname = usePathname();
 
-    const form = useForm({
+    const { organization } = useOrganization();
+
+    const form = useForm<z.infer<typeof ThreadValidation>>({
         resolver: zodResolver(ThreadValidation),
         defaultValues: {
-            thread: '',
+            thread: "",
             accountId: userId,
         },
     });
@@ -48,12 +42,12 @@ function PostThread({ userId }: { userId: string }) {
         await createThread({
             text: values.thread,
             author: userId,
-            communityId: null,
+            communityId: organization ? organization.id : null,
             path: pathname,
         });
 
-        router.push('/');
-    }
+        router.push("/");
+    };
 
     return (
         <Form {...form}>

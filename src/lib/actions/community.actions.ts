@@ -289,7 +289,7 @@ export async function deleteCommunity(communityId: string) {
         const communityUsers = await User.find({ communities: communityId });
 
         // Remove the community from the 'communities' array for each user
-        const updateUserPromises = communityUsers.map((user) => {
+        const updateUserPromises = communityUsers.map((user: any) => {
             user.communities.pull(communityId);
             return user.save();
         });
