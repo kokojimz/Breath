@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📝 Description
+Breath is a web-based social media platform where users can share their thoughts, much like Twitter. As a web-based application, Breath is crafted using the robust and modern TypeScript language, leveraging the capabilities of Next.js 14 for server-side rendering, ensuring a seamless and swift user experience. Authentication is streamlined through the integration of Clerk, providing secure and hassle-free access for users. At its core, Breath utilizes MongoDB, a powerful and flexible database, to store and manage data efficiently.
 
-## Getting Started
+# ⚙️ Tech Stack
+[![My Skills](https://skillicons.dev/icons?i=nextjs,ts,mongodb,tailwind,vercel,)](https://skillicons.dev)
 
-First, run the development server:
+# 💡 Features
+✅ Authentication: Authentication using Clerk for email, password, and social logins (Google and GitHub) with a comprehensive profile management system.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✅ Visually Appealing Home Page: A visually appealing home page showcasing the latest threads for an engaging user experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+✅ Create Thread Page: A dedicated page for users to create threads, fostering community engagement
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+✅ Commenting Feature: A commenting feature to facilitate discussions within threads.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+✅ Nested Commenting: Commenting system with nested threads, providing a structured conversation flow.
 
-## Learn More
+✅ User Search with Pagination: A user search feature with pagination for easy exploration and discovery of other users.
 
-To learn more about Next.js, take a look at the following resources:
+✅ Activity Page: Display notifications on the activity page when someone comments on a user's thread, enhancing user engagement.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+✅ Profile Page: User profile pages for showcasing information and enabling modification of profile settings.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+✅ Create and Invite to Communities: Allow users to create new communities and invite others using customizable template emails.
 
-## Deploy on Vercel
+✅ Community Member Management: A user-friendly interface to manage community members, allowing role changes and removals.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+✅ Admin-Specific Community Threads: Enable admins to create threads specifically for their community.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+✅ Community Search with Pagination: A community search feature with pagination for exploring different communities.
+
+✅ Community Profiles: Display community profiles showcasing threads and members for a comprehensive overview.
+
+✅ Server Side Rendering: Utilize Next.js with Server Side Rendering for enhanced performance and SEO benefits.
+
+✅ MongoDB with Complex Schemas: Handle complex schemas and multiple data populations using MongoDB.
+
+✅ File Uploads with UploadThing: File uploads using UploadThing for a seamless media sharing experience.
+
+✅ Real-Time Events Listening: Real-time events listening with webhooks to keep users updated.
+
+✅ Middleware, API Actions, and Authorization: Utilize middleware, API actions, and authorization for robust application security.
+
+✅ Next.js Layout Route Groups: New Next.js layout route groups for efficient routing
+
+✅ Data Validation with Zod: Data integrity with data validation using Zod.
+
+✅ Form Management with React Hook Form: Efficient management of forms with React Hook Form for a streamlined user input experience.
