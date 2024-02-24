@@ -97,10 +97,6 @@ function Comment({
           )}
         />
 
-        <Button type="submit" className="comment-form_btn">
-          Reply
-        </Button>
-
         {showEmojiPicker && (
           <div className="absolute top-[100%] right-2" ref={emojiPickerRef}>
             <Picker
@@ -121,6 +117,10 @@ function Comment({
         >
           <CiFaceSmile className="text-2xl text-gray-400 hover:text-gray-600" />
         </button>
+
+        <Button type="submit" className="comment-form_btn">
+          Reply
+        </Button>
       </form>
     </Form>
   );

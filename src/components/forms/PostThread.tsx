@@ -143,7 +143,7 @@ function PostThread({ userId, threadId, threadText }: Props) {
 
         <Button
           type="submit"
-          className="bg-primary-500 hover:bg-secondary-500"
+          className="bg-green-600 hover:bg-green-800"
           disabled={isButtonDisabled}
         >
           {isButtonDisabled ? (
