@@ -55,6 +55,34 @@ interface Params {
     path: string,
 }
 
+export async function editThread({
+    threadId /* New */,
+    text,
+    path,
+  }: {
+    threadId: string;
+    text: string;
+    path: string;
+  }) {
+    try {
+      connectToDB();
+  
+      const thread = await Thread.findById(threadId);
+  
+      if (!thread) {
+        throw new Error("Chirp not found");
+      }
+  
+      thread.text = text;
+  
+      await thread.save();
+  
+      revalidatePath(path);
+    } catch (err: any) {
+      throw new Error(`Failed to edit chirp: ${err.message}`);
+    }
+  }
+
 export async function createThread({ text, author, communityId, path }: Params
 ) {
     try {
